@@ -67,6 +67,9 @@ GpuService::GpuService()
 };
 
 GpuService::~GpuService() {
+    mGpuMem->stop();
+    mGpuWork->stop();
+
     mGpuWorkAsyncInitThread->join();
     mGpuMemAsyncInitThread->join();
 }
